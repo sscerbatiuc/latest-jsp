@@ -47,5 +47,52 @@
     </servlet-mapping>
 
 
+    <!--Login-->
+    <servlet>
+        <servlet-name>loginServlet</servlet-name>
+        <servlet-class>com.step.controller.LoginController</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>loginServlet</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+
+
+    <!--Logout-->
+    <servlet>
+        <servlet-name>logoutServlet</servlet-name>
+        <servlet-class>com.step.controller.LogoutController</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>logoutServlet</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+
+<!--    <filter>-->
+<!--        <filter-name>requestLoggingFilter</filter-name> &lt;!&ndash; mandatory &ndash;&gt;-->
+<!--        <filter-class>com.step.filter.RequestLoggingFilter</filter-class> &lt;!&ndash; mandatory &ndash;&gt;-->
+<!--        <init-param> &lt;!&ndash; optional &ndash;&gt;-->
+<!--            <param-name>test</param-name>-->
+<!--            <param-value>testValue</param-value>-->
+<!--        </init-param>-->
+<!--    </filter>-->
+<!--    <filter-mapping>-->
+<!--        <filter-name>requestLoggingFilter</filter-name> &lt;!&ndash; mandatory &ndash;&gt;-->
+<!--        <url-pattern>/*</url-pattern> &lt;!&ndash; either url-pattern or servlet-name is mandatory &ndash;&gt;-->
+<!--        <servlet-name>loginServlet</servlet-name>-->
+<!--        <dispatcher>REQUEST</dispatcher>-->
+<!--    </filter-mapping>-->
+
+    <filter>
+        <filter-name>authenticationFilter</filter-name>
+        <filter-class>com.step.filter.AuthenticationFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>authenticationFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 
 </web-app>

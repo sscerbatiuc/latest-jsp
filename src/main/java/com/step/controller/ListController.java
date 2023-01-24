@@ -1,32 +1,19 @@
 package com.step.controller;
 
-import com.step.model.Employee;
 import com.step.model.EmployeeModel;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 // TODO: afisarea, adaugarea, editarea si stergerea
 
 public class ListController extends HttpServlet {
 
-
-
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        // call db
-
-        // 1. Determinam ce pagina noi vrem sa afisam
-
         String searchBy = req.getParameter("search");
-        if(searchBy != null) {
+        if (searchBy != null) {
             this.search(req, resp);
         } else {
             this.displayPage(req, resp);

@@ -22,6 +22,7 @@
       <li><a href="edit">Edit</a></li>
       <li><a href="delete">Delete</a></li>
       <li><a href="about.jsp">About</a></li>
+      <li><a href="logout">Logout</a></li>
     </ul>
   </div>
   <%@ include file="common/bootstrap_js.html"%>
