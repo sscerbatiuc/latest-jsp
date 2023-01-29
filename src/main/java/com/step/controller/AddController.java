@@ -1,9 +1,9 @@
 package com.step.controller;
 
 import com.step.model.Employee;
+import com.step.model.EmployeeDAO;
 import com.step.model.EmployeeModel;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -15,6 +15,7 @@ public class AddController extends HttpServlet {
     // Implicit servletele nu raspund la nici un tip de apeluri
     // GET, POST, PUT, DELETE, PATCH
 
+    EmployeeDAO dao = new EmployeeDAO();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -32,6 +33,7 @@ public class AddController extends HttpServlet {
         String name = req.getParameter("name");
         String surname = req.getParameter("surname");
         String birthdate = req.getParameter("birthdate");
+        dao.create(surname, name, LocalDate.parse(birthdate));
         System.out.println(name + surname + birthdate);
         EmployeeModel model = EmployeeModel.getInstance();
         model.add(new Employee(name, surname, LocalDate.parse(birthdate)));

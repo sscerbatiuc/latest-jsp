@@ -1,10 +1,11 @@
 package com.step.controller;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.http.*;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 /**
  * Servlet implementation class LoginServlet
@@ -38,8 +39,8 @@ public class LoginController extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("userId", userId);
             session.setAttribute("userName", "admin");
-            // Setting session to expiry in 15 seconds
-            session.setMaxInactiveInterval(15);
+            // Setting session to expiry in 1 hour
+            session.setMaxInactiveInterval(3600);
             response.sendRedirect("index.jsp");
         } else {
             request.setAttribute("error", "Wrong user name and/or password");

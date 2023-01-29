@@ -1,13 +1,29 @@
 package com.step.model;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 
+@Entity
+@Table(name = "employee")
 public class Employee {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", unique = true, nullable = false)
     private int id;
+
+    @Column(name = "name", unique = false, nullable = false, length = 100)
     private String name;
+
+    @Column(name = "surname", unique = false, nullable = false, length = 100)
     private String surname;
+
+    @Column(name = "birthdate")
     private LocalDate birthdate;
+
+    protected Employee() {
+
+    }
 
     public Employee(String name, String surname) {
         this.name = name;

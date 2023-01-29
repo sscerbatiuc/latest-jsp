@@ -29,5 +29,33 @@
             <artifactId>el-api</artifactId>
             <version>2.2</version>
         </dependency>
+
+        <!-- hibernate-core: The core Hibernate library that provides the ORM functionality.-->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>5.4.11.Final</version>
+        </dependency>
+
+        <!-- hibernate-validator: This library is used for validating the entity fields-->
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>6.1.5.Final</version>
+        </dependency>
+
+        <!-- hibernate-c3p0: This library is used to configure connection pooling.-->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-c3p0</artifactId>
+            <version>5.4.11.Final</version>
+        </dependency>
+
+        <!-- JDBC driver: The JDBC driver is required to connect to the database.-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.28</version>
+        </dependency>
     </dependencies>
 </project>
